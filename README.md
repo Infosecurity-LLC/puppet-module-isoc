@@ -2,7 +2,14 @@
 
 Welcome to your new module. A short overview of the generated parts can be found in the PDK documentation at https://puppet.com/docs/pdk/latest/pdk_generating_modules.html .
 
+Добро пожаловать в новый модуль. Короткий обзор сгенерированных частей Вы найдете в документации по PDK https://puppet.com/docs/pdk/latest/pdk_generating_modules.html. 
+
 The README template below provides a starting point with details about what information to include in your README.
+
+Данный шаблон дает начальную точку об информации, какую включать в этот README.
+
+
+
 
 #### Table of Contents
 
@@ -17,9 +24,8 @@ The README template below provides a starting point with details about what info
 
 ## Description
 
-Briefly tell users why they might want to use your module. Explain what your module does and what kind of problems users can solve with it.
+Данный модуль предназначен для развертывания компонентов isoc в организации.
 
-This should be a fairly short description helps the user decide if your module is what they want.
 
 ## Setup
 
