@@ -43,6 +43,8 @@ The README template below provides a starting point with details about what info
 
 Для работы данного модуля должна быть подключена возможность использования экспортируемых ресурсов ( [Exported resources](https://puppet.com/docs/puppet/latest/lang_exported.html) )
 
+Данный модуль использует внешние модули, у внешних модулей есть дополнительные зависимости, например, для модуля [telegraf](https://github.com/voxpupuli/puppet-telegraf#setup), необходима установка дополнительного gem `toml-rb`
+
 > If your module requires anything extra before setting up (pluginsync enabled, another module, etc.), mention it here.
 >
 > If your most recent release breaks compatibility or requires particular steps for upgrading, you might want to include an additional "Upgrading" section here.

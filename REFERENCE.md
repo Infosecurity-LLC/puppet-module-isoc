@@ -5,9 +5,50 @@
 
 **Classes**
 
+* [`isoc`](#isoc): Main class to include other classes
 * [`isoc::postgresql`](#isocpostgresql): Class for include postgresql resources
 
 ## Classes
+
+### isoc
+
+A description of what this class does
+
+or use hiera to include this module to tou envinronment
+  classes:
+    - isoc
+
+  isoc::use_telegraf: true
+
+#### Examples
+
+##### Main usage
+
+```puppet
+include isoc
+```
+
+##### Add output to telegraf in hiera
+
+```puppet
+telegraf::outputs:
+  socket_writer:
+    address: "udp4://localhost:8089"
+    data_format: "influx"
+```
+
+#### Parameters
+
+The following parameters are available in the `isoc` class.
+
+##### `use_telegraf`
+
+Data type: `Boolean`
+
+Include telegraf to send metrics to you monitoring system
+If you want to add or change output for telegraf, you may include to hiera
+
+Default value: `false`
 
 ### isoc::postgresql
 
