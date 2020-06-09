@@ -1,10 +1,10 @@
 # isoc
 
-Welcome to your new module. A short overview of the generated parts can be found in the PDK documentation at https://puppet.com/docs/pdk/latest/pdk_generating_modules.html .
+> Welcome to your new module. A short overview of the generated parts can be found in the PDK documentation at https://puppet.com/docs/pdk/latest/pdk_generating_modules.html .
 
 Добро пожаловать в новый модуль. Короткий обзор сгенерированных частей Вы найдете в документации по PDK https://puppet.com/docs/pdk/latest/pdk_generating_modules.html. 
 
-The README template below provides a starting point with details about what information to include in your README.
+> The README template below provides a starting point with details about what information to include in your README.
 
 Данный шаблон дает начальную точку об информации, какую включать в этот README.
 
@@ -99,7 +99,8 @@ In the Limitations section, list any incompatibilities, known issues, or other w
 
 ## Development
 
-In the Development section, tell other users the ground rules for contributing to your project and how they should submit their work.
+При разработке данного модуля, пользуйтесь [общими рекомендациями](https://puppet.com/docs/puppet/latest/bgtm.html) от Puppetlabs.
+> In the Development section, tell other users the ground rules for contributing to your project and how they should submit their work.
 
 ## Release Notes/Contributors/Etc. **Optional**
 

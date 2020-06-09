@@ -1,6 +1,6 @@
 # @summary Main class to include other classes
 #
-# A description of what this class does
+# This base class for include other profiles, classes and create resources
 #
 # @example Main usage
 #   include isoc

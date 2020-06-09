@@ -12,7 +12,7 @@
 
 ### isoc
 
-A description of what this class does
+This base class for include other profiles, classes and create resources
 
 or use hiera to include this module to tou envinronment
   classes:
