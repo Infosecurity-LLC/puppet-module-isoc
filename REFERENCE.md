@@ -28,6 +28,21 @@ or use hiera to include this module to tou envinronment
 include isoc
 ```
 
+##### Configure influxdb udp listener
+
+```puppet
+influxdb::udp_config:
+  default:
+    enabled: true
+    bind-address: ':8089'
+    database: 'metrics'
+    retention-policy: ''
+    batch-size: 5000
+    batch-pending: 10
+    batch-timeout: '1s'
+    read-buffer: 0
+```
+
 ##### Add output to telegraf in hiera
 
 ```puppet
@@ -40,6 +55,15 @@ telegraf::outputs:
 #### Parameters
 
 The following parameters are available in the `isoc` class.
+
+##### `use_influxdb`
+
+Data type: `Boolean`
+
+Include influxdb to install time-series database
+If you want to configure influxdb, you may include to hiera
+
+Default value: `false`
 
 ##### `use_telegraf`
 
