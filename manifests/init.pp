@@ -36,14 +36,22 @@
 #       address: "udp4://localhost:8089"
 #       data_format: "influx"
 #
+# @param [Boolean] use_airflow
+#   Include airflow to manage company's workflow orchestration.
+#   If you want to set some parameters for airflow, you may include them to hiera
+#
 class isoc (
 Boolean    $use_influxdb = false,
 Boolean    $use_telegraf = false,
+Boolean    $use_airflow = false,
     ){
     if $use_influxdb {
         include influxdb
     }
     if $use_telegraf {
         include telegraf
+    }
+    if $use_airflow {
+        include airflow
     }
 }
