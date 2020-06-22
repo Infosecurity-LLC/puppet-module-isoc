@@ -62,7 +62,7 @@
 
 Эта секция считается устаревшей. Рекомендуется использовать комментарии в классах и ресурсах для описания параметров, которые можно использовать при использовании данного модуля. Для генерации файла REFERENCE.md, нужно использовать `puppet string generate --format markdown`
 
-Документация по использованию Puppet Strins:
+Документация по использованию Puppet Strings:
  - [documentation](https://puppet.com/docs/puppet/latest/puppet_strings.html)
  - [style guide](https://puppet.com/docs/puppet/latest/puppet_strings_style.html)
 
