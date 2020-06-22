@@ -7,6 +7,7 @@
 
 * [`isoc`](#isoc): Main class to include other classes
 * [`isoc::postgresql`](#isocpostgresql): Class for include postgresql resources
+* [`isoc::sysctl::low_latency`](#isocsysctllow_latency): Class for fine tuning tcp stack in local network
 
 ## Classes
 
@@ -193,4 +194,188 @@ Data type: `Hash`
 Create resources postgresql::validate_db_connection
 
 Default value: `undef`
+
+### isoc::sysctl::low_latency
+
+This class tune tcp stack using `sysctl`
+
+#### Examples
+
+##### Basic usage
+
+```puppet
+include isoc::sysctl::lowlatency
+```
+
+#### Parameters
+
+The following parameters are available in the `isoc::sysctl::low_latency` class.
+
+##### `net_ipv4_tcp_orphan_retries`
+
+Data type: `Optional[Integer]`
+
+Set parameter kernel `net.ipv4.tcp_orphan_retries`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 0
+
+##### `net_ipv4_tcp_syncookies`
+
+Data type: `Optional[Integer]`
+
+Set parameter kernel `net.ipv4.tcp_syncookies`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 0
+
+##### `net_ipv4_tcp_timestamps`
+
+Data type: `Optional[Integer]`
+
+Set parameter kernel `net.ipv4.tcp_timestamps`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 0
+
+##### `net_ipv4_tcp_no_metrics_save`
+
+Data type: `Optional[Integer]`
+
+Set parameter kernel `net.ipv4.tcp_no_metrics_save`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 1
+
+##### `net_ipv4_tcp_rfc1337`
+
+Data type: `Optional[Integer]`
+
+Set parameter kernel `net.ipv4.tcp_rfc1337`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 1
+
+##### `net_ipv4_tcp_low_latency`
+
+Data type: `Optional[Integer]`
+
+Set parameter kernel `net.ipv4.tcp_low_latency`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 1
+
+##### `net_ipv4_tcp_sack`
+
+Data type: `Optional[Integer]`
+
+Set parameter kernel `net.ipv4.tcp_sack`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 1
+
+##### `net_ipv4_tcp_tw_reuse`
+
+Data type: `Optional[Integer]`
+
+Set parameter kernel `net.ipv4.tcp_tw_reuse`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 1
+
+##### `tcp_buff`
+
+Data type: `Optional[String]`
+
+Set three parameter kernel `net.ipv4.tcp_mem`, `net.ipv4.tcp_rmem`, `net.ipv4.tcp_wmem`, if you set value as `undef`, puppet will not touch this parameters.
+
+Default value: '4096  8388608  16777216'
+
+##### `net_ipv4_tcp_congestion_control`
+
+Data type: `Optional[String]`
+
+Set three parameter kernel `net.ipv4.tcp_congestion_control`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 'htcp'
+
+##### `net_ipv4_udp_mem`
+
+Data type: `Optional[String]`
+
+Set three parameter kernel `net.ipv4.udp_mem`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: '1024000  8738000  167772160'
+
+##### `net_ipv4_udp_rmem_min`
+
+Data type: `Optional[Integer]`
+
+Set three parameter kernel `net.ipv4.udp_rmem_min`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 32768
+
+##### `net_ipv4_udp_wmem_min`
+
+Data type: `Optional[Integer]`
+
+Set three parameter kernel `net.ipv4.udp_wmem_min`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 32768
+
+##### `net_core_rmem_default`
+
+Data type: `Optional[Integer]`
+
+Set three parameter kernel `net.core.rmem_default`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 268435456
+
+##### `net_core_wmem_default`
+
+Data type: `Optional[Integer]`
+
+Set three parameter kernel `net.core.wmem_default`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 268435456
+
+##### `net_core_rmem_max`
+
+Data type: `Optional[Integer]`
+
+Set three parameter kernel `net.core.rmem_max`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 536870912
+
+##### `net_core_wmem_max`
+
+Data type: `Optional[Integer]`
+
+Set three parameter kernel `net.core.wmem_max`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 536870912
+
+##### `net_core_somaxconn`
+
+Data type: `Optional[Integer]`
+
+Set three parameter kernel `net.core.somaxconn`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 32768
+
+##### `net_core_netdev_max_backlog`
+
+Data type: `Optional[Integer]`
+
+Set three parameter kernel `net.core.netdev_max_backlog`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 32000
+
+##### `net_ipv4_tcp_fin_timeout`
+
+Data type: `Optional[Integer]`
+
+Set three parameter kernel `net.ipv4.tcp_fin_timeout`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 25
+
+##### `net_ipv4_tcp_max_syn_backlog`
+
+Data type: `Optional[Integer]`
+
+
+
+Default value: 2048
 

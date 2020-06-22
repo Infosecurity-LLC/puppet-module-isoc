@@ -38,13 +38,13 @@ class isoc::postgresql (
   $server_databases        = undef,
   $server_database_grants  = undef,
   $server_extensions       = undef,
-  $server_grants    	   = undef,
-  $server_grant_roles 	   = undef,
+  $server_grants           = undef,
+  $server_grant_roles      = undef,
   $server_pg_hba_rules     = undef,
   $server_pg_ident_rules   = undef,
-  $server_schemas    	   = undef,
-  $server_table_grants 	   = undef,
-  $server_tablespaces 	   = undef,
+  $server_schemas          = undef,
+  $server_table_grants     = undef,
+  $server_tablespaces      = undef,
   $validate_db_connections = undef,
   ) {
 
