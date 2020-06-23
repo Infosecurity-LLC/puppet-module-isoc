@@ -6,31 +6,35 @@
 #   include isoc::postgresql
 #
 # @param server_config_entrys [Hash]
-#      Create resources postgresql::server::config_entry
+#      Create resources `postgresql::server::config_entry`
 # @param [Hash] server_dbs
-#      Create resources postgresql::server::db
+#      Create resources `postgresql::server::db`
 # @param [Hash] server_databases
-#      Create resources postgresql::server::database
+#      Create resources `postgresql::server::database`
 # @param [Hash] server_database_grants
-#      Create resources postgresql::server::database_grant
+#      Create resources `postgresql::server::database_grant`
 # @param [Hash] server_extensions
-#      Create resources postgresql::server::extension
+#      Create resources `postgresql::server::extension`
 # @param [Hash] server_grants
-#      Create resources postgresql::server::grant
+#      Create resources `postgresql::server::grant`
 # @param [Hash] server_grant_roles
-#      Create resources postgresql::server::grant_role
+#      Create resources `postgresql::server::grant_role`
 # @param [Hash] server_pg_hba_rules
-#      Create resources postgresql::server::pg_hba_rule
+#      Create resources `postgresql::server::pg_hba_rule`
 # @param [Hash] server_pg_ident_rules
-#      Create resources postgresql::server::pg_ident_rule
+#      Create resources `postgresql::server::pg_ident_rule`
+# @param [Hash] server_recoverys
+#      Create resources `postgresql::server::recovery`
+# @param [Hash] server_roles
+#      Create resources `postgresql::server::role`
 # @param [Hash] server_schemas
-#      Create resources postgresql::server::schema
+#      Create resources `postgresql::server::schema`
 # @param [Hash] server_table_grants
-#      Create resources postgresql::server::table_grants
+#      Create resources `postgresql::server::table_grants`
 # @param [Hash] server_tablespaces
-#      Create resources postgresql::server::tablespace
+#      Create resources `postgresql::server::tablespace`
 # @param [Hash] validate_db_connections
-#      Create resources postgresql::validate_db_connection
+#      Create resources `postgresql::validate_db_connection`
 #
 class isoc::postgresql (
   $server_config_entrys    = undef,
@@ -42,6 +46,8 @@ class isoc::postgresql (
   $server_grant_roles      = undef,
   $server_pg_hba_rules     = undef,
   $server_pg_ident_rules   = undef,
+  $server_recoverys        = undef,
+  $server_roles            = undef,
   $server_schemas          = undef,
   $server_table_grants     = undef,
   $server_tablespaces      = undef,

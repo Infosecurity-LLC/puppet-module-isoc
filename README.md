@@ -60,7 +60,7 @@
 ## Reference
 Смотрите [REFERENCE.md](REFERENCE.md)
 
-Эта секция считается устаревшей. Рекомендуется использовать комментарии в классах и ресурсах для описания параметров, которые можно использовать при использовании данного модуля. Для генерации файла REFERENCE.md, нужно использовать `puppet string generate --format markdown`
+Эта секция считается устаревшей. Рекомендуется использовать комментарии в классах и ресурсах для описания параметров, которые можно использовать в данном модуле. Для генерации файла REFERENCE.md, нужно использовать `puppet string generate --format markdown`
 
 Документация по использованию Puppet Strings:
  - [documentation](https://puppet.com/docs/puppet/latest/puppet_strings.html)
@@ -101,6 +101,23 @@ In the Limitations section, list any incompatibilities, known issues, or other w
 
 При разработке данного модуля, пользуйтесь [общими рекомендациями](https://puppet.com/docs/puppet/latest/bgtm.html) от Puppetlabs.
 > In the Development section, tell other users the ground rules for contributing to your project and how they should submit their work.
+
+Для разработки необходимо установить PDK.
+
+Создание нового класса:
+```
+pdk new class isoc::class
+```
+
+Создание нового типа:
+```
+pdk new defined_type type
+```
+
+Запустить Unit тесты:
+```
+pdk test unit
+```
 
 ## Release Notes/Contributors/Etc. **Optional**
 

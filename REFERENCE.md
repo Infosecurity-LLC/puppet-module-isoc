@@ -75,6 +75,15 @@ If you want to add or change output for telegraf, you may include to hiera
 
 Default value: `false`
 
+##### `use_airflow`
+
+Data type: `Boolean`
+
+Include airflow to manage company's workflow orchestration.
+If you want to set some parameters for airflow, you may include them to hiera
+
+Default value: `false`
+
 ### isoc::postgresql
 
 This class create defined types from module postgresql, all values are hashes
@@ -95,7 +104,7 @@ The following parameters are available in the `isoc::postgresql` class.
 
 Data type: `Hash`
 
-Create resources postgresql::server::config_entry
+Create resources `postgresql::server::config_entry`
 
 Default value: `undef`
 
@@ -103,7 +112,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::db
+Create resources `postgresql::server::db`
 
 Default value: `undef`
 
@@ -111,7 +120,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::database
+Create resources `postgresql::server::database`
 
 Default value: `undef`
 
@@ -119,7 +128,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::database_grant
+Create resources `postgresql::server::database_grant`
 
 Default value: `undef`
 
@@ -127,7 +136,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::extension
+Create resources `postgresql::server::extension`
 
 Default value: `undef`
 
@@ -135,7 +144,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::grant
+Create resources `postgresql::server::grant`
 
 Default value: `undef`
 
@@ -143,7 +152,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::grant_role
+Create resources `postgresql::server::grant_role`
 
 Default value: `undef`
 
@@ -151,7 +160,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::pg_hba_rule
+Create resources `postgresql::server::pg_hba_rule`
 
 Default value: `undef`
 
@@ -159,7 +168,23 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::pg_ident_rule
+Create resources `postgresql::server::pg_ident_rule`
+
+Default value: `undef`
+
+##### `server_recoverys`
+
+Data type: `Hash`
+
+Create resources `postgresql::server::recovery`
+
+Default value: `undef`
+
+##### `server_roles`
+
+Data type: `Hash`
+
+Create resources `postgresql::server::role`
 
 Default value: `undef`
 
@@ -167,7 +192,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::schema
+Create resources `postgresql::server::schema`
 
 Default value: `undef`
 
@@ -175,7 +200,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::table_grants
+Create resources `postgresql::server::table_grants`
 
 Default value: `undef`
 
@@ -183,7 +208,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::server::tablespace
+Create resources `postgresql::server::tablespace`
 
 Default value: `undef`
 
@@ -191,7 +216,7 @@ Default value: `undef`
 
 Data type: `Hash`
 
-Create resources postgresql::validate_db_connection
+Create resources `postgresql::validate_db_connection`
 
 Default value: `undef`
 
