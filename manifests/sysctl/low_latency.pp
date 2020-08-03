@@ -35,6 +35,9 @@
 # @param net_ipv4_tcp_congestion_control
 #      Set three parameter kernel `net.ipv4.tcp_congestion_control`, if you set value as `undef`, puppet will not touch this parameter.
 #
+# @param net_ipv4_tcp_max_syn_backlog
+#      Set three parameter kernel `net.ipv4.tcp_max_syn_backlog`, if you set value as `undef`, puppet will not touch this parameter.
+#
 # @param net_ipv4_udp_mem
 #      Set three parameter kernel `net.ipv4.udp_mem`, if you set value as `undef`, puppet will not touch this parameter.
 #
