@@ -6,8 +6,10 @@
 **Classes**
 
 * [`isoc`](#isoc): Main class to include other classes
+* [`isoc::grafana`](#isocgrafana): A short summary of the purpose of this class
 * [`isoc::postgresql`](#isocpostgresql): Class for include postgresql resources
 * [`isoc::sysctl::low_latency`](#isocsysctllow_latency): Class for fine tuning tcp stack in local network
+* [`isoc::tgsend`](#isoctgsend): Class for create python script for send notifications to telegram channels.
 
 ## Classes
 
@@ -83,6 +85,38 @@ Include airflow to manage company's workflow orchestration.
 If you want to set some parameters for airflow, you may include them to hiera
 
 Default value: `false`
+
+### isoc::grafana
+
+A description of what this class does
+
+#### Examples
+
+##### 
+
+```puppet
+include isoc::grafana
+```
+
+#### Parameters
+
+The following parameters are available in the `isoc::grafana` class.
+
+##### `image_renderer`
+
+Data type: `Any`
+
+
+
+Default value: `true`
+
+##### `image_renderer_packages`
+
+Data type: `Any`
+
+
+
+Default value: [ "libXcomposite", "libXdamage", "libXtst", "cups", "libXScrnSaver", "pango", "atk", "adwaita-cursor-theme", "adwaita-icon-theme", "at", "at-spi2-atk", "at-spi2-core", "cairo-gobject", "colord-libs", "dconf", "desktop-file-utils", "ed", "emacs-filesystem", "gdk-pixbuf2", "glib-networking", "gnutls", "gsettings-desktop-schemas", "gtk-update-icon-cache", "gtk3", "hicolor-icon-theme", "jasper-libs", "json-glib", "libappindicator-gtk3", "libdbusmenu", "libdbusmenu-gtk3", "libepoxy", "liberation-fonts", "liberation-narrow-fonts", "liberation-sans-fonts", "liberation-serif-fonts", "libgusb", "libindicator-gtk3", "libmodman", "libproxy", "libsoup", "libwayland-cursor", "libwayland-egl", "libxkbcommon", "m4", "mailx", "nettle", "patch", "psmisc", "redhat-lsb-core", "redhat-lsb-submod-security", "rest", "spax", "time", "trousers", "xdg-utils", "xkeyboard-config" ]
 
 ### isoc::postgresql
 
@@ -316,6 +350,14 @@ Set three parameter kernel `net.ipv4.tcp_congestion_control`, if you set value a
 
 Default value: 'htcp'
 
+##### `net_ipv4_tcp_max_syn_backlog`
+
+Data type: `Optional[Integer]`
+
+Set three parameter kernel `net.ipv4.tcp_max_syn_backlog`, if you set value as `undef`, puppet will not touch this parameter.
+
+Default value: 2048
+
 ##### `net_ipv4_udp_mem`
 
 Data type: `Optional[String]`
@@ -396,11 +438,69 @@ Set three parameter kernel `net.ipv4.tcp_fin_timeout`, if you set value as `unde
 
 Default value: 25
 
-##### `net_ipv4_tcp_max_syn_backlog`
+### isoc::tgsend
+
+This class create script for send notifications to telegram channels
+
+#### Examples
+
+##### Main usage
+
+```puppet
+include isoc::tgsend
+```
+
+##### Include as parametrized class
+
+```puppet
+class {isoc::tgsend:
+  ensure => present,
+  bot_id => 'mybotid',
+  chat_id => <my-chat-id>,
+}
+```
+
+#### Parameters
+
+The following parameters are available in the `isoc::tgsend` class.
+
+##### `ensure`
+
+Data type: `Enum['present', 'absent']`
+
+Create or delete file tg-send
+
+Default value: 'absent'
+
+##### `bot_id`
+
+Data type: `String`
+
+ID bot in telegram
+
+Default value: ''
+
+##### `chat_id`
+
+Data type: `Integer`
+
+Chat ID in telegram for send notifications
+
+Default value: `undef`
+
+##### `critical_chat_id`
 
 Data type: `Optional[Integer]`
 
+Chat ID for critical notifications
 
+Default value: `undef`
 
-Default value: 2048
+##### `proxy`
+
+Data type: `Optional[String]`
+
+URL proxy for connect to telegram servers
+
+Default value: `undef`
 

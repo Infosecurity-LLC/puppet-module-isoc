@@ -5,7 +5,7 @@
 # @example Basic usage
 #   include isoc::postgresql
 #
-# @param server_config_entrys [Hash]
+# @param [Hash] server_config_entrys
 #      Create resources `postgresql::server::config_entry`
 # @param [Hash] server_dbs
 #      Create resources `postgresql::server::db`
