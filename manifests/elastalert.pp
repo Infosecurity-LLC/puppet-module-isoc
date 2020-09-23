@@ -29,18 +29,18 @@
 # @param service_subscribe
 #      Service `subscribe` parameter
 class isoc::elastalert (
-    Enum['present', 'absent']   $ensure                         = 'present',
-    String                      $package_name                   = 'elastalert-correlation',
-    String                      $package_ensure                 = 'installed',
-    Stdlib::Absolutepath        $config_dir                     = '/etc/elastalert',
-    Stdlib::Absolutepath        $bin_dir                        = '/opt/elastalert',
-    String                      $config_file                    = 'elastalert_config.yaml',
-    String                      $config_file_source             = '',
-    Boolean                     $service_manage                 = false,
-    String                      $service_name                   = 'elastalert',
-    Enum['stopped', 'false', 'running', 'true'] $service_ensure = 'running',
-    Boolean                     $service_enable                 = true,
-    Variant[ Array, String, Undef ] $service_subscribe          = File["${config_dir}/${config_file}"],
+    Enum['present', 'absent']   $ensure                             = 'present',
+    String                      $package_name                       = 'elastalert-correlation',
+    String                      $package_ensure                     = 'installed',
+    Stdlib::Absolutepath        $config_dir                         = '/etc/elastalert',
+    Stdlib::Absolutepath        $bin_dir                            = '/opt/elastalert',
+    String                      $config_file                        = 'elastalert_config.yaml',
+    String                      $config_file_source                 = '',
+    Boolean                     $service_manage                     = false,
+    String                      $service_name                       = 'elastalert',
+    Enum['stopped', 'false', 'running', 'true'] $service_ensure     = 'running',
+    Boolean                     $service_enable                     = true,
+    Variant[ Resource, Array, String, Undef ] $service_subscribe    = File["${config_dir}/${config_file}"],
     ){
 if $ensure == 'present' {
     package { $package_name:
