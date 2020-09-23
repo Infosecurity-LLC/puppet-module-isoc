@@ -40,7 +40,7 @@ class isoc::elastalert (
     String                      $service_name                       = 'elastalert',
     Enum['stopped', 'false', 'running', 'true'] $service_ensure     = 'running',
     Boolean                     $service_enable                     = true,
-    Variant[ Resource, Array, String, Undef ] $service_subscribe    = File["${config_dir}/${config_file}"],
+                                $service_subscribe                  = File["${config_dir}/${config_file}"],
     ){
 if $ensure == 'present' {
     package { $package_name:
