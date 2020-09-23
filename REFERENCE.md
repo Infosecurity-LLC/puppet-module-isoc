@@ -194,7 +194,7 @@ Default value: ``true``
 
 ##### `service_subscribe`
 
-Data type: `Variant[ Array, String, Undef ]`
+Data type: `Variant[ Resource, Array, String, Undef ]`
 
 Service `subscribe` parameter
 
