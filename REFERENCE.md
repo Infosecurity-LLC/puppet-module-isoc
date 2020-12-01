@@ -8,6 +8,7 @@
 
 * [`isoc`](#isoc): Main class to include other classes
 * [`isoc::elastalert`](#isocelastalert): Class for install and configure elastalert
+* [`isoc::firewall`](#isocfirewall): Class for include firewall rules for services
 * [`isoc::grafana`](#isocgrafana): A short summary of the purpose of this class
 * [`isoc::postgresql`](#isocpostgresql): Class for include postgresql resources
 * [`isoc::sysctl::low_latency`](#isocsysctllow_latency): Class for fine tuning tcp stack in local network
@@ -85,6 +86,14 @@ Data type: `Boolean`
 
 Include airflow to manage company's workflow orchestration.
 If you want to set some parameters for airflow, you may include them to hiera
+
+Default value: ``false``
+
+##### `use_firewall`
+
+Data type: `Boolean`
+
+Include class isoc::firewall to manage firewall rules for services
 
 Default value: ``false``
 
@@ -199,6 +208,38 @@ Data type: `Any`
 Service `subscribe` parameter
 
 Default value: `File["${config_dir}/${config_file}"]`
+
+### `isoc::firewall`
+
+It class share firewall rules and create it in needed nodes.
+
+#### Examples
+
+##### 
+
+```puppet
+include isoc::firewall
+```
+
+#### Parameters
+
+The following parameters are available in the `isoc::firewall` class.
+
+##### `rules_export`
+
+Data type: `Boolean`
+
+Can node export resources `firewall` to other nodes
+
+Default value: ``true``
+
+##### `rules_collect`
+
+Data type: `Boolean`
+
+Can node collect and create firewall rules in iptables from other nodes
+
+Default value: ``true``
 
 ### `isoc::grafana`
 
