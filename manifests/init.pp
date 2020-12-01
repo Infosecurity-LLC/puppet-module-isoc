@@ -40,10 +40,14 @@
 #   Include airflow to manage company's workflow orchestration.
 #   If you want to set some parameters for airflow, you may include them to hiera
 #
+# @param [Boolean] use_firewall
+#   Include class isoc::firewall to manage firewall rules for services
+#
 class isoc (
 Boolean    $use_influxdb = false,
 Boolean    $use_telegraf = false,
 Boolean    $use_airflow = false,
+Boolean    $use_firewall = false,
     ){
     if $use_influxdb {
         include influxdb
@@ -53,5 +57,8 @@ Boolean    $use_airflow = false,
     }
     if $use_airflow {
         include airflow
+    }
+    if $use_firewall {
+        contain isoc::firewall
     }
 }
