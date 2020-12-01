@@ -16,6 +16,7 @@ Boolean $rules_collect = true,
 		$rules_lookup_options = {
 				'name'  => 'firewalls_export',
 				'value_type' => Hash,
+				'default_value' => {},
 				'merge' => {
 					  'strategy'          => 'deep',
 					  'knockout_prefix'   => '--'}}
