@@ -1,5 +1,19 @@
 class isoc::fw_pre {
   include ipset
+### Manage ipset
+  $virtual_ipsets = lookup('virtual_ipsets',Hash,'deep',{})
+  if $virtual_ipsets {
+    create_resources('@ipset', $virtual_ipsets)
+  }
+  $realize_ipsets = lookup('realize_ipsets',Array[String],'unique', [])
+  if $realize_ipsets {
+    realize(Ipset[$realize_ipsets])
+  }
+  $ipsets = lookup('ipsets',Hash,'deep',{})
+  if $ipsets {
+    create_resources('ipset', $ipsets)
+  }
+### Manage firewall
   if $ipaddress6 {
     class { 'firewall' : ensure_v6 => 'running'}
   } else {

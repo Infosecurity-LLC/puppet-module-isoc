@@ -1,1 +1,25 @@
---- {}
+---
+
+isoc::nginx::selinux_booleans:
+  httpd_setrlimit: {}
+  httpd_unified: {}
+  httpd_can_network_connect: {}
+  httpd_can_network_relay: {}
+
+isoc::nginx::selinux_modules:
+  local-nginx:
+    source_te: 'puppet://modules/isoc/selinux/policies/local-nginx.te'
+
+isoc::curator::actions:
+  'default_clear_indicies':
+    action: delete_indices
+    description: 'Delete indices older than 30 days (based on index name)'
+    ignore_empty_list: 'True'
+    filters:
+      -
+        filtertype: age
+        source: name
+        direction: older
+        timestring: '''%Y.%m.%d'''
+        unit: days
+        unit_count: 30
