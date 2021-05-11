@@ -7,7 +7,7 @@ class isoc::fw_pre {
   }
   $realize_ipsets = lookup('realize_ipsets',Array[String],'unique', [])
   if $realize_ipsets {
-    realize(Ipset[$realize_ipsets])
+    realize(Ipset::Set[$realize_ipsets])
   }
   $ipsets = lookup('ipsets',Hash,'deep',{})
   if $ipsets {
