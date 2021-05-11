@@ -22,5 +22,5 @@ class isoc::nginx (
     if $selinux_ports {
       create_resources('selinux::port', $selinux_ports)
     }
-
+  }
 }
