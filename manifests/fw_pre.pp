@@ -3,7 +3,7 @@ class isoc::fw_pre {
 ### Manage ipset
   $virtual_ipsets = lookup('virtual_ipsets',Hash,'deep',{})
   if $virtual_ipsets {
-    create_resources('@ipset', $virtual_ipsets)
+    create_resources('@ipset::set', $virtual_ipsets)
   }
   $realize_ipsets = lookup('realize_ipsets',Array[String],'unique', [])
   if $realize_ipsets {
@@ -11,7 +11,7 @@ class isoc::fw_pre {
   }
   $ipsets = lookup('ipsets',Hash,'deep',{})
   if $ipsets {
-    create_resources('ipset', $ipsets)
+    create_resources('ipset::set', $ipsets)
   }
 ### Manage firewall
   if $ipaddress6 {
