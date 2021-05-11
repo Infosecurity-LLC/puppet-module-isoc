@@ -1,12 +1,12 @@
-# Class: profile::linux
+# Class: isoc::linux
 #
 #
-class profile::linux {
-  class { ['profile::fw_pre', 'profile::fw_post']: }
+class isoc::linux {
+  class { ['isoc::fw_pre', 'isoc::fw_post']: }
 
   Firewall {
-     before  => Class['profile::fw_post'],
-     require => Class['profile::fw_pre'],
+     before  => Class['isoc::fw_post'],
+     require => Class['isoc::fw_pre'],
    }
 ### Manage firewall rules
   $firewalls = lookup('firewalls',Hash,'deep',{})
