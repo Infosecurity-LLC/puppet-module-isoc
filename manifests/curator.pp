@@ -10,6 +10,9 @@ class isoc::curator (
   ){
   include python
   include curator
+  file { '/root/.curator':
+    ensure => directory,
+  }
 #  $curator_actions = lookup('curator_actions', Hash, 'deep', {})
   if $actions {
     create_resources('curator::action', $actions)

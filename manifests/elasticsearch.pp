@@ -31,21 +31,5 @@ class isoc::elasticsearch (
             'cluster_stats' => true,
         }],
     }
-    $grafana_alerts_server=lookup('grafana_alerts_server', String, 'deep', '')
-    $grafana_alerts_prop=lookup('grafana_alerts_prop', Hash, 'deep', {})
-    $grafana_role_alerts = {
-        elasticsearch => {
-          template => 'elasticsearch',
-          }
-    }
-    if $grafana_alerts_server {
-      @@isoc::grafana_role_alerts{"${fqdn}_grafana_es_alerts":
-          services => $grafana_role_alerts,
-          role=> $::role,
-          organization=> $::organization,
-          prop => $grafana_alerts_prop,
-          grafana_alerts_server => $grafana_alerts_server,
-      }
-    }
   }
 }
