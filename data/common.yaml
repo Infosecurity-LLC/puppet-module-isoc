@@ -8,7 +8,7 @@ isoc::nginx::selinux_booleans:
 
 isoc::nginx::selinux_modules:
   local-nginx:
-    source_te: 'puppet://modules/isoc/selinux/policies/local-nginx.te'
+    source_te: 'puppet:///modules/isoc/selinux/policies/local-nginx.te'
 
 isoc::curator::actions:
   'default_clear_indicies':
